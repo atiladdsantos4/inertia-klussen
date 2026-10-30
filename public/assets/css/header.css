@@ -1,0 +1,346 @@
+
+/* ================================
+   HEADER PRINCIPAL
+================================ */
+
+#header.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    max-height: 130px;
+    min-height: 100px;
+    z-index: 9999;
+
+    background-color: #050505;
+    background-image: url("/images/Santos Klussenbedrijf Modern Header.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    box-sizing: border-box;
+}
+
+/* Container interno */
+
+.header-container {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    box-sizing: border-box;
+}
+
+/* ================================
+   LOGO
+================================ */
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex: 0 1 300px;
+    min-width: 150px;
+    max-width: 300px;
+
+    text-decoration: none;
+    z-index: 2;
+}
+
+.header-logo img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    max-height: 100px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* ================================
+   MENU
+================================ */
+
+#navmenu.navmenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 100%;
+}
+
+#navmenu.navmenu > ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#navmenu.navmenu li {
+    position: relative;
+    list-style: none;
+}
+
+#navmenu.navmenu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 12px 0;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+#navmenu.navmenu a:hover,
+#navmenu.navmenu a:focus {
+    color: #ff4b0b;
+}
+
+#navmenu.navmenu .toggle-dropdown {
+    font-size: 12px;
+    transition: transform 0.25s ease;
+}
+
+/* Submenus */
+
+#navmenu.navmenu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -12px;
+
+    min-width: 220px;
+    max-height: 70vh;
+    overflow-y: auto;
+
+    padding: 8px 0;
+    margin: 0;
+
+    background: rgba(10, 10, 10, 0.98);
+    border-top: 3px solid #ff4b0b;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+#navmenu.navmenu li:hover > ul,
+#navmenu.navmenu li:focus-within > ul {
+    display: block;
+}
+
+#navmenu.navmenu ul ul a {
+    justify-content: flex-start;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 400;
+    white-space: normal;
+}
+
+#navmenu.navmenu ul ul a:hover {
+    color: #ff4b0b;
+    background: rgba(255, 75, 11, 0.09);
+}
+
+/* Submenu de terceiro nível */
+
+#navmenu.navmenu ul ul ul {
+    top: 0;
+    left: 100%;
+}
+
+/* ================================
+   REDES SOCIAIS
+================================ */
+
+.header-social-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+
+    flex: 0 0 auto;
+    z-index: 2;
+}
+
+.header-social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    color: #ffffff;
+    font-size: 17px;
+    text-decoration: none;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.header-social-links a:hover {
+    color: #ffffff;
+    background-color: #ff4b0b;
+    border-color: #ff4b0b;
+}
+
+/* Compatibilidade com as classes existentes */
+
+.head {
+    color: #ffffff;
+}
+
+.centralizado {
+    text-align: center;
+}
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 1400px) {
+    .header-container {
+        gap: 16px;
+        padding: 0 20px;
+    }
+
+    .header-logo {
+        flex-basis: 240px;
+        max-width: 240px;
+    }
+
+    #navmenu.navmenu > ul {
+        gap: 12px;
+    }
+
+    #navmenu.navmenu a {
+        font-size: 12px;
+    }
+
+    .header-social-links {
+        gap: 7px;
+    }
+
+    .header-social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1100px) {
+    #header.header {
+        height: 100px;
+        min-height: 100px;
+    }
+
+    .header-logo {
+        flex-basis: 220px;
+        max-width: 220px;
+    }
+
+    .header-logo img {
+        max-height: 80px;
+    }
+
+    #navmenu.navmenu > ul {
+        gap: 9px;
+    }
+
+    #navmenu.navmenu a {
+        font-size: 11px;
+    }
+
+    .header-social-links {
+        gap: 5px;
+    }
+
+    .header-social-links a {
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 900px) {
+    #header.header {
+        height: 90px;
+        min-height: 90px;
+        background-position: center;
+    }
+
+    .header-container {
+        padding: 0 18px;
+        justify-content: space-between;
+    }
+
+    .header-logo {
+        flex: 0 1 250px;
+        max-width: 250px;
+    }
+
+    .header-logo img {
+        max-height: 75px;
+    }
+
+    #navmenu.navmenu > ul {
+       display: none;
+    }
+
+    #navmenu.navmenu .mobile-nav-toggle {
+        display: block;
+        color: #ffffff;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .header-social-links {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    #header.header {
+        height: 80px;
+        min-height: 80px;
+    }
+
+    .header-logo {
+        flex-basis: 220px;
+        max-width: 220px;
+    }
+
+    .header-logo img {
+        max-height: 65px;
+    }
+
+    .header-container {
+        padding: 0 12px;
+    }
+}

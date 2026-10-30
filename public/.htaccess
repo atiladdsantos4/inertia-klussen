@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_env.c>
+        SetEnvIf Authorization "(.*)" HTTP_Authorization=$1
+    </IfModule>
+
+    RewriteEngine On
+    RewriteBase "/"
+    # RewriteBase "/inertia-klussen/"
+    # aqui vc define o folder do alias caso seja um virtual host
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteRule ^(.*)$ index.php/$1 [L] --> correto
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+
